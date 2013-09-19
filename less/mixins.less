@@ -1,0 +1,52 @@
+.border-radius (@radius) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -khtml-border-radius: @radius;
+}
+.box-shadow (@arg) {
+  -moz-box-shadow: @arg;
+  -webkit-box-shadow: @arg;
+  box-shadow: @arg;
+}
+// copied from Bootstrap
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.disable-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.rotate (@deg) {
+  -webkit-transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  -ms-transform: rotate(@deg);
+  -o-transform: rotate(@deg);
+}
+.svg-icon (@width, @height, @encoded-image) {
+  background-image: url('data:image/svg+xml;base64,@{encoded-image}');
+  background-position: center;
+  background-size: @width @height;
+  display: inline-block;
+  height: @height;
+  line-height: @height;
+  width: @width;
+}
+.svg-fallback-image (@url) {
+  .no-svg & {
+    background-image: url('@{url}');
+  }
+}
